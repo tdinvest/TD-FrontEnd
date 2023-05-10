@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TD-Investment Bank</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa me-2"></i>DASHBOARD</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <span class="rounded-circle" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 id='email' class="mb-0">Loading....</h6>
+                        <span id="active">Offline</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="button.html" class="dropdown-item">Buttons</a>
+                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                        </div>
+                    </div> -->
+                    <!-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a> -->
+                    <a href="transaction.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Transactions</a>
+                    <!-- <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a> 
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <button onclick = "logout()" class="dropdown-item">Sign Out</button>
+                            <!-- <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a> -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-3 py-0">
+                <!-- <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                  <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2> 
+                </a> -->
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form> -->
+                <h3 class="text-primary px-2  mt-2 small-text">TD-INVESTMENT BANK</h3>
+                <p id="message"></p>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <p id="message"></p>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link w-5 h-5" >
+                            
+                            <i class="fa fa-user"></i>
+                            <span id="user-name" class="small-text2">Loading</span>
+                        </a>
+                        <!-- <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div> -->
+                    </div>
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div> -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                           <span class="text-primary rounded-circle me-lg-2" style="width: 40px; height: 40px; color: primary">Logout</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <button type="button" onclick = "logout()" class="btn btn-primary w-100">Log Out</button>
+                            <!-- <a href="#" class="dropdown-item">Log Out</a> -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4" >
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-left p-4">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Balance($)</p>
+                                <h6 id="acc-bal"  class="mb-0">Loading...</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-left p-4">
+                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Account No.</p>
+                                <h6 id="acc-no" class="mb-0">Loading...</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-left p-4">
+                            <i class="fa fa-user-circle fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Name</p>
+                                <h6 id="acc-name" class="mb-0">Loading...</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-left p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Type</p>
+                                <h6 class="mb-0" id="customer-type">Loading....</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sale & Revenue End -->
+
+
+            
+
+
+
+
+              <!-- Recent Sales Start Main -->
+              <!-- <div class="myDiv container-fluid pt-4 px-4" id="myAcc">
+                <div class="bg-light text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Transaction History</h6>
+                        <a href="#">Transaction older than a year are not visible</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-dark">
+                                    
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    <td>01 Jan 2023</td>
+                                   
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Success</td>
+                                    <td>Deposit</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>01 Jan 2024</td>
+                                    
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Success</td>
+                                    <td>Transfer</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>01 Jan 2025</td>
+                                   
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Failed</td>
+                                    <td>Deposit</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>01 Jan 2026</td>
+                                   
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Paid</td>
+                                    <td>Success</td>
+                                </tr>
+
+                                <tr>
+                                    
+                                    <td>01 Jan 2027</td>
+                                    
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Cancelled</td>
+                                    <td>Transfer</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>01 Jan 2048</td>
+                                    
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Success</td>
+                                    <td>Transfer</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Recent Sales End -->
+
+
+
+
+ 
+
+<!-- Recent Sales Start Empty -->
+<div class="container-fluid pt-4 px-4" id="newAcc">
+    <div class="bg-light text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 id="trans-history" class="mb-0">Transaction History Empty</h6>
+            <a class="text-primary">Transaction older than a year are not visible</a>
+        </div>
+        <div class="table-responsive">
+            <table id="transactions" class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        
+                        <th scope="col">Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Amount($)</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody >
+                   
+                        <!-- Transactions here -->
+                        
+                   
+                    <!-- <tr>
+                        
+                        <td>01 Jan 2022</td>
+                        
+                        <td>Jhon Doe</td>
+                        <td>$123</td>
+                        <td>Success</td>
+                        <td>Transfer</td>
+                    </tr> -->
+                    <!-- <tr>
+                        
+                        <td>01 Jan 2023</td>
+                       
+                        <td>Jhon Doe</td>
+                        <td>$123</td>
+                        <td>Failed</td>
+                        <td>Deposit</td>
+                    </tr> -->
+                    <!-- <tr>
+                        
+                        <td>01 Jan 2024</td>
+                       
+                        <td>Jhon Doe</td>
+                        <td>$123</td>
+                        <td>Paid</td>
+                        <td>Success</td>
+                    </tr> -->
+
+                    <!-- <tr>
+                        
+                        <td>01 Jan 2045</td>
+                        
+                        <td>Jhon Doe</td>
+                        <td>$123</td>
+                        <td>Cancelled</td>
+                        <td>Transfer</td>
+                    </tr> -->
+                    <!-- <tr>
+                        
+                        <td>01 Jan 2046</td>
+                        
+                        <td>Jhon Doe</td>
+                        <td>$123</td>
+                        <td>Success</td>
+                        <td>Transfer</td>
+                    </tr>
+                     -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Recent Sales End -->
+
+
+<!-- Sales Chart Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Worldwide Sales</h6>
+                    <!-- <a href="">Show All</a> -->
+                </div>
+                <canvas id="worldwide-sales"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Sales & Revenue</h6>
+                    <!-- <a href="">Show All</a> -->
+                </div>
+                <canvas id="salse-revenue"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sales Chart End -->
+
+          
+
+            <!-- Widgets Start -->
+  
+            <!-- Widgets End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">TD Investment</a>, All Right Reserved. 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+     const userId = localStorage.getItem("user-id");
+    const auth = localStorage.getItem('auth');
+
+    if (!auth || !userId) {
+        location.replace("https://td-front-end.vercel.app");
+     
+    }
+
+    //console.log(userId)
+    if(userId) {
+        fetch(`https://td-back-end.vercel.app/transactions/user-transactions/${userId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => {
+                // console.log(res);
+                // if (res.status === 422) {
+                //     document.getElementById("p12").innerHTML = "Something went wrong";
+                //     document.getElementById("p12").style.color = "red";
+                //     document.getElementById("p22").innerHTML = 'Login';
+                //     document.getElementById("p22").disabled = false;
+                //     throw new Error('Validation failed.');
+                // }
+                // if (res.status !== 200 && res.status !== 201) {
+                //     console.log('Error!');
+                //     document.getElementById("p12").innerHTML = "Username or Password is incorrect!";
+                //     document.getElementById("p12").style.color = "red";
+                //     document.getElementById("p22").innerHTML = 'Login';
+                //     document.getElementById("p22").disabled = false;
+                //     throw new Error('Could not authenticate you!');
+                // }
+                if (res.statusText === "Internal Server Error") {
+                    throw new Error('Network Error');
+                }
+                return res.json();
+            }).then(resData => {
+                    if (resData.message === 'Success') {
+                       // console.log(resData.transactions);
+                        const first_name = resData.first_name;
+                        const last_name = resData.last_name;
+                        const user_name = resData.user_name;
+                        const email = resData.email;
+                        const account_type = resData.account_type;
+                        const customer_type = resData.customer_type;
+                        const SSN = resData.SSN;
+                        const account_no = resData.account_no;
+                        const account_bal = resData.account_bal;
+                       console.log(resData.transactions.userTransaction);
+                        document.getElementById("user-name").innerHTML = user_name;
+                        document.getElementById("email").innerHTML = email;
+                        document.getElementById("acc-bal").innerHTML = account_bal;
+                        document.getElementById("acc-no").innerHTML = account_no;
+                        document.getElementById("acc-name").innerHTML = `${first_name} ${last_name}`;
+                        document.getElementById("customer-type").innerHTML = customer_type;
+                        document.getElementById("active").innerHTML = "Active";
+                   
+
+                    const table = document.getElementById("transactions");
+                    const transactions = resData.transactions.userTransaction;
+                    document.getElementById("trans-history").innerHTML = 'Loading...';
+                    if(transactions.length === 0 ) {
+                        document.getElementById("trans-history").innerHTML = 'No transaction history';
+                    return;
+                    }
+                
+                    transactions.forEach((transaction) => {
+                    // Create a new row element
+                    const row = document.createElement("tr");
+
+                    // Create a cell for the name and add it to the row
+                    const nameCell = document.createElement("td");
+                    nameCell.textContent = transaction.name;
+                    row.appendChild(nameCell);
+
+                    // Create a cell for the age and add it to the row
+                    const dateCell = document.createElement("td");
+                    dateCell.textContent = transaction.date;
+                    row.appendChild(dateCell);
+
+                    // Create a cell for the city and add it to the row
+                    const amountCell = document.createElement("td");
+                    amountCell.textContent = transaction.amount;
+                    row.appendChild(amountCell);
+
+                    // Create a cell for the city and add it to the row
+                    const statusCell = document.createElement("td");
+                    statusCell.textContent = transaction.status;
+                    row.appendChild(statusCell);
+
+                    // Create a cell for the city and add it to the row
+                    const actionCell = document.createElement("td");
+                    actionCell.textContent = transaction.action;
+                    row.appendChild(actionCell);
+
+                    // Add the row to the table body
+                    table.querySelector("tbody").appendChild(row);
+                    })
+
+document.getElementById("trans-history").innerHTML = 'Transaction History';
+                        //const fruitHtml = transactions.map(fruit => console.log(fruit.name) );
+                    //     const transactionHtml = transactions.map(transaction => {
+                    //      `
+                    //     <td>${transaction.date}</td>
+                    //    <td>${transaction.name}</td>
+                    //    <td>${transaction.amount}</td>
+                    //    <td>${transaction.status}</td>
+                    //    <td>${transaction.acount}</td>`});
+                    //    document.getElementById('transactions').innerHTML = `<tr>${transactionHtml}</tr>`;
+                    //  console.log(transactionHtml)
+                    //console.log(transactions[transaction].name)
+                  
+                    
+                        //const fruitHtml = transactions.map(fruit => console.log(fruit));
+                        //const fruitHtml =
+                    
+                    //      transactions.map(transaction => {
+                    //        console.log('transac', transaction)
+                    //         // `<li>${fruit}</li>`
+                    //     });
+                        // const verify = resData.verify;
+                        // const transactions = resData.transactions; 
+                        // localStorage.setItem('first_name', first_name);
+                        // localStorage.setItem('last_name', last_name);
+                        // localStorage.setItem('user_name', user_name);
+                        // localStorage.setItem('email', email);
+                        // localStorage.setItem('account_type', account_type);
+                        // localStorage.setItem('customer_type', customer_type);
+                        // localStorage.setItem('SSN', SSN);
+                        // localStorage.setItem('account_no',  account_no);
+                        // localStorage.setItem('accountno', account_bal);
+                        // localStorage.setItem('accountno', transactions);
+                        // console.log(resData);
+                        
+                    }
+
+
+                })
+                .catch(err => {
+                    console.log(err);
+                    document.getElementById("message").innerHTML = "Network error";
+                    document.getElementById("message").style.color = "red";
+                    //document.getElementById("my-button").innerHTML = "Login";
+                    // document.getElementById("my-button").disabled = false;
+                });
+
+    }
+
+    
+    function logout() { 
+        localStorage.removeItem('auth');
+        localStorage.removeItem('user-id');
+        location.replace("https://td-front-end.vercel.app");
+      } 
+    // console.log(userId); 
+    //      if(!localStorage.getItem("email")) {
+    //     location.replace("https://td-investment-website.vercel.app");
+     
+    // }
+
+   
+    // if (localStorage.getItem("email") === 'tdinvestmentbankk@gmail.com') {
+        
+    //    document.getElementById("myAcc").style.visibility = 'visible';
+    //     document.getElementById("newAcc").style.visibility = 'hidden';
+    //     document.getElementById("newAcc").style.position = 'absolute';  
+    //     console.log('reached')
+    // }
+    // if (localStorage.getItem("email") !== 'tdinvestmentbankk@gmail.com') {
+        
+    //    document.getElementById("newAcc").style.visibility = 'visible'; 
+    //     document.getElementById("myAcc").style.visibility = 'hidden'; 
+    //     document.getElementById("myAcc").style.position = 'absolute';
+    //    console.log('reached1')
+    // }
+    
+    //     console.log(localStorage.getItem("username")); 
+    //     document.getElementById("email").innerHTML = localStorage.getItem("email");
+    //     document.getElementById("balance").innerHTML = localStorage.getItem("balance");
+    //     document.getElementById("use-name").innerHTML = localStorage.getItem("username");
+    //     document.getElementById("use-name2").innerHTML = localStorage.getItem("username");
+    //     document.getElementById("accountno").innerHTML = localStorage.getItem("accountno");
+
+       
+
+        </script>
+</body>
+
+</html>

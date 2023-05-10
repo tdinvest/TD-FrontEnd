@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TD-Investment Bank</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary">Transaction</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <span class="rounded-circle" style="width: 40px; height: 40px;">
+                            <div
+                                class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                            </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0" id="user_name">Loading.....</h6>
+                        <span id="active">Offline</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="index.html" class="nav-item nav-link"><i
+                            class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="button.html" class="dropdown-item">Buttons</a>
+                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                        </div>
+                    </div> -->
+                    <a href="form.html" class="nav-item nav-link active"><i
+                            class="fa fa-keyboard me-2"></i>Transactions</a>
+                    <!-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div> -->
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-3 py-0">
+                <!-- <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i></i></h2>
+                </a> -->
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form> -->
+                <h3 class="text-primary px-2 mt-2">TD-INVESTMENT BANK</h3>
+                <div class="navbar-nav align-items-center ms-auto">
+
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div> -->
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+
+                        ...o-ow-di-
+                    </div> -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+
+                            <span id="email" class="d-none d-lg-inline-flex">Loading.....</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <!-- <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a> -->
+                            <button type="button" onclick="logout()" class="btn btn-primary">Log Out</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Deposite Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Deposit($)</h6>
+                            <!-- Deposit -->
+                            <form class="form-deposit" id="myForm">
+                                <div class="mb-3">
+                                    <label for="deposit-amount" id="deposit-input" class="form-label">Input Deposit
+                                        amount</label>
+                                    <input type="number" class="form-control" name="deposit-amount"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div> -->
+                                <button type="submit" id="my-button-deposit" class="btn btn-primary">Request
+                                    Deposit</button>
+                                <p id="deposit-message"></p>
+                                <p id="deposit-message1"></p>
+                                <p id="deposit-message2"></p>
+                                <div class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Transfer($)</h6>
+                            <p for="amount" id="transfer-message" class="form-label">Input Details Correctly</p>
+
+                            <form class="form-transfer" id="transfer-form">
+                                <div class="row mb-3">
+                                    <label for="transfer-account-no" class="col-sm-2 col-form-label">Account No.</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="transfer-account-no"
+                                            name="transfer-account-no">
+                                    </div>
+                                    <label for="transfer-account-name" class="col-sm-2 col-form-label">Account
+                                        Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="transfer-account-name"
+                                            name="transfer-account-name">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="transfer-amount" class="col-sm-2 col-form-label">Amount($)</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="transfer-amount"
+                                            name="transfer-amount">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="transfer-bank-name" class="col-sm-2 col-form-label">Bank</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="transfer-bank-name"
+                                            name="transfer-bank-name">
+                                    </div>
+                                </div>
+
+                                <!-- <div class="row mb-3">
+                                    <legend class="col-form-label col-sm-2 pt-0">Checkbox</legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <button id="transfer-button" type="submit" class="btn btn-primary">Request
+                                    Transfer</button>
+                            </form>
+                            <p id="transfer-message1"></p>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Floating Label</h6>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <label for="floatingSelect">Works with selects</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Comments</label>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">File Input</h6>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Default file input example</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileSm" class="form-label">Small file input example</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="file">
+                            </div>
+                            <div>
+                                <label for="formFileLg" class="form-label">Large file input example</label>
+                                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Select</h6>
+                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <select class="form-select" multiple aria-label="multiple select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Check, Radio & Switch</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Default checkbox
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Checked checkbox
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"
+                                    disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                            </div>
+                            <hr>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Default radio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Default checked radio
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                    value="option3" disabled>
+                                <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                            </div>
+                            <hr>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox
+                                    input</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox
+                                    input</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDisabled" disabled>
+                                <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox
+                                    input</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckCheckedDisabled" checked disabled>
+                                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked
+                                    switch checkbox input</label>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Input Group</h6>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Recipient's username"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <span class="input-group-text" id="basic-addon2">@example.com</span>
+                            </div>
+                            <label for="basic-url" class="form-label">Your vanity URL</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">With textarea</span>
+                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Sizing</h6>
+                            <input class="form-control form-control-lg mb-3" type="text" placeholder=".form-control-lg"
+                                aria-label=".form-control-lg example">
+                            <input class="form-control mb-3" type="text" placeholder="Default input"
+                                aria-label="default input example">
+                            <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"
+                                aria-label=".form-control-sm example">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+                    <!-- Form End -->
+
+
+                    <!-- Footer Start -->
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light rounded-top p-4">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 text-center text-sm-start">
+                                    &copy; <a href="#">TD-Investment</a>, All Right Reserved.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer End -->
+                </div>
+                <!-- Content End -->
+
+
+                <!-- Back to Top -->
+                <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/chart/chart.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="lib/tempusdominus/js/moment.min.js"></script>
+            <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+            <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+            <!-- Template Javascript -->
+            <script src="js/main.js"></script>
+            <script>
+                var accBal;
+                var email;
+                const userId = localStorage.getItem("user-id");
+                const auth = localStorage.getItem('auth');
+
+                if (!auth || !userId) {
+                    location.replace("https://td-front-end.vercel.app");
+                }
+                //http://localhost:9001/
+                if (userId) {
+                    fetch(`https://td-back-end.vercel.app/transactions/user-transactions/${userId}`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(res => {
+                        if (res.statusText === "Internal Server Error") {
+                            throw new Error('Network Error');
+                        }
+                        return res.json();
+                    }).then(resData => {
+                        if (resData.message === 'Success') {
+                            user_name = resData.user_name;
+                            email = resData.email;
+                            accBal = resData.account_bal;
+                            document.getElementById("email").innerHTML = email;
+                            document.getElementById("user_name").innerHTML = user_name;
+                            document.getElementById("active").innerHTML = 'Active';
+                        }
+                    })
+                        .catch(err => {
+                            console.log(err);
+                            document.getElementById("email").innerHTML = "Network error";
+                            document.getElementById("user_name").innerHTML = "Network error";
+                            document.getElementById("email").style.color = "red";
+                            document.getElementById("user_name").style.color = "red";
+                        });
+
+
+                }
+
+
+                function logout() {
+                    localStorage.removeItem('auth');
+                    localStorage.removeItem('user-id');
+                    location.replace("https://td-front-end.vercel.app");
+                }
+
+
+                //DEPOSIT-FORM
+                const depositForm = document.querySelector('.form-deposit');
+                depositForm.addEventListener('submit', event => {
+                    event.preventDefault();
+                    document.getElementById("deposit-message").innerHTML = null;
+                    document.getElementById("deposit-message").style.color = "";
+                    document.getElementById("deposit-message1").innerHTML = null;
+                    document.getElementById("deposit-message1").style.color = "";
+
+                    const formData = new FormData(depositForm);
+                    const depositAmount = formData.get('deposit-amount');
+                    if (depositAmount === '') {
+                        document.getElementById("deposit-message").innerHTML = "Please Input Deposit Amount";
+                        document.getElementById("deposit-message").style.color = "red";
+                        return;
+                    }
+                    if (!user_name) {
+                        document.getElementById("deposit-message").innerHTML = "Network Error";
+                        document.getElementById("deposit-message").style.color = "red";
+                        return;
+                    }
+
+                    document.getElementById("deposit-message").innerHTML = "Please Wait...";
+                    document.getElementById("deposit-message").style.color = "black";
+                    document.getElementById("my-button-deposit").disabled = true;
+                    const data = Object.fromEntries(formData);
+
+                    fetch('https://td-back-end.vercel.app/transactions/deposit', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: user_name,
+                            amount: depositAmount
+                        })
+                    })
+                        .then(res => {
+
+                            document.getElementById("deposit-message1").innerHTML = 'Processing...';
+                            document.getElementById("deposit-message1").style.color = "green";
+                            return res.json();
+                        }).then(resData => {
+                            console.log(resData);
+                            if (resData.message === 'An error occured') {
+                                document.getElementById("deposit-message").innerHTML = "An error occured, try again later";
+                                document.getElementById("deposit-message").style.color = "red"
+                                document.getElementById("deposit-message1").innerHTML = null;
+                                document.getElementById("deposit-message1").style.color = "";
+                                document.getElementById("my-button-deposit").innerHTML = 'Request Deposit';
+                                document.getElementById("my-button-deposit").disabled = false;
+                                return;
+                            }
+
+
+                            if (resData.message === 'Sent') {
+
+                                document.getElementById("deposit-message1").innerHTML = 'Request sent successfully, you will get an email soon';
+                                document.getElementById("deposit-message1").style.color = "green";
+                                document.getElementById("my-button-deposit").innerHTML = 'Request Another Deposit';
+                                document.getElementById("deposit-message").innerHTML = "";
+                                document.getElementById("deposit-message").style.color = "";
+                                document.getElementById("my-button-deposit").disabled = false;
+                                document.getElementById("myForm").reset();
+                            }
+
+
+
+                        })
+                        .catch(err => {
+                            document.getElementById("deposit-message").innerHTML = "An error occured, try again later";
+                            document.getElementById("deposit-message").style.color = "red";
+
+                            document.getElementById("deposit-message1").innerHTML = "";
+                            document.getElementById("deposit-message1").style.color = "";
+                            document.getElementById("deposit-message2").innerHTML = "";
+                            document.getElementById("deposit-message2").style.color = "";
+
+                            document.getElementById("my-button").innerHTML = 'Request Deposit';
+                            document.getElementById("my-button").disabled = false;
+                            console.log(err);
+                        });
+                });
+
+
+
+
+
+
+
+
+
+
+                //TRANSFER
+                const transferForm = document.querySelector('.form-transfer');
+
+                transferForm.addEventListener('submit', event => {
+                    event.preventDefault();
+
+                    const formData = new FormData(transferForm);
+
+                    const accNo = formData.get('transfer-account-no');
+                    const accName = formData.get('transfer-account-name');
+                    const transferAmount = formData.get('transfer-amount');
+                    const bankName = formData.get('transfer-bank-name');
+
+                    console.log(accNo);
+                    console.log(accName);
+                    console.log(transferAmount);
+                    console.log(bankName);
+
+                    if (accNo === '') {
+                        document.getElementById("transfer-message").innerHTML = "Account number cannot be empty";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
+                    if (accNo.length < 5) {
+                        document.getElementById("transfer-message").innerHTML = "Invalid Account number";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
+                    if (accName === '') {
+                        document.getElementById("transfer-message").innerHTML = "Account name cannot be empty";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
+                    if (transferAmount === '') {
+                        document.getElementById("transfer-message").innerHTML = "Please Input amount";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
+                    if (bankName === '') {
+                        document.getElementById("transfer-message").innerHTML = "Bank Name cannot be empty";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
+
+                    if (accBal < transferAmount) {
+                        document.getElementById("transfer-message").innerHTML = "Your account balance is low to make this transfer";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
+
+
+                    document.getElementById("transfer-message1").innerHTML = "Please Wait...";
+                    document.getElementById("transfer-message1").style.color = "black";
+                    document.getElementById("transfer-button").disabled = true;
+                    const data = Object.fromEntries(formData);
+
+                    fetch('https://td-back-end.vercel.app/transactions/transfer', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: user_name,
+                            amount: transferAmount,
+                            accountno: accNo,
+                            bankname: bankName,
+                        })
+                    })
+                        .then(res => {
+                            document.getElementById("transfer-message1").innerHTML = 'Processing...';
+                            document.getElementById("transfer-message1").style.color = "green";
+                            return res.json();
+                        }).then(resData => {
+                            console.log(resData);
+                            if (resData.message === 'An error occured') {
+                                document.getElementById("transfer-message1").innerHTML = "An error occured, try again later";
+                                document.getElementById("transfer-message1").style.color = "red"
+                                document.getElementById("transfer-button").innerHTML = 'Request Transfer';
+                                document.getElementById("transfer-button").disabled = false;
+                                return;
+                            }
+
+
+                            if (resData.message === 'Sent') {
+
+                                document.getElementById("transfer-message1").innerHTML = 'Request sent successfully, you will get an email soon';
+                                document.getElementById("transfer-message1").style.color = "green";
+                                document.getElementById("transfer-button").innerHTML = 'Request Another Transfer';
+                                document.getElementById("transfer-button").disabled = false;
+                                document.getElementById("transfer-form").reset();
+                            }
+                        })
+                        .catch(err => {
+                            document.getElementById("transfer-message1").innerHTML = "An error occured, try again later";
+                            document.getElementById("transfer-message1").style.color = "red";
+
+                            document.getElementById("transfer-button").innerHTML = 'Request Deposit';
+                            document.getElementById("transfer-button").disabled = false;
+
+                            console.log(err);
+                        });
+
+                });
+ 
+            </script>
+</body>
+
+</html>
