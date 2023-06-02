@@ -1057,24 +1057,28 @@
                         return;
                     }
 
-                    if (resData.verify === '0') {
-                        localStorage.setItem('verify-email', resData.email);
-                        location.replace("send-verify-email.html");
+                    if (resData.message === 'deactive') {
+                        document.getElementById("message").innerHTML = "Invalid username or password";
+                        document.getElementById("message").style.color = "red";
+                        document.getElementById("my-button").innerHTML = "Login";
+                        document.getElementById("my-button").disabled = false;
                         return;
                     }
 
                     // if (resData.verify === '0') {
-                    //     localStorage.setItem('verify-email', resData.email);
-                    //     location.replace("send-verify-email.html");
-                    //     return;
+                        
                     // }
+
+                    
                     if (resData.message === 'Success') {
                         console.log(resData);
-                        const userId = resData.userId;
                         localStorage.removeItem("user-signed-up");
                         localStorage.setItem('auth', '1');
+                        localStorage.setItem('from-login', '1');
                         localStorage.setItem('user-id', userId);
-                        location.replace("dashboard/index.html");
+                        localStorage.setItem('verify-email', resData.email);
+                        location.replace("send-verify-email.html");
+                        return;
                         // const first_name = resData.first_name;
                         // const last_name = resData.last_name;
                         // const user_name = resData.user_name;
