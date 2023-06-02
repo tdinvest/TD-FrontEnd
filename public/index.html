@@ -1057,8 +1057,8 @@
                         return;
                     }
 
-                    if (resData.message === 'deactive') {
-                        document.getElementById("message").innerHTML = "Invalid username or password";
+                    if (resData.deactive === 'Y') {
+                        document.getElementById("message").innerHTML = "This account has been temporarily deactivated.";
                         document.getElementById("message").style.color = "red";
                         document.getElementById("my-button").innerHTML = "Login";
                         document.getElementById("my-button").disabled = false;
