@@ -1075,7 +1075,7 @@
                         localStorage.removeItem("user-signed-up");
                         localStorage.setItem('auth', '1');
                         localStorage.setItem('from-login', '1');
-                        localStorage.setItem('user-id', userId);
+                        localStorage.setItem('user-id', resData.userId);
                         localStorage.setItem('verify-email', resData.email);
                         location.replace("send-verify-email.html");
                         return;
