@@ -711,7 +711,7 @@
                         return;
                     }
 
-                    if (accBal < transferAmount) {
+                    if (accBal < +transferAmount) {
                         document.getElementById("transfer-message").innerHTML = "Your account balance is low to make this transfer";
                         document.getElementById("transfer-message").style.color = "red";
                         return;
