@@ -532,9 +532,9 @@
                 const auth = localStorage.getItem('auth');
                document.getElementById("request-code").classList.add("d-none");
                document.getElementById("transfer-button").classList.add("d-none");
-                // if (!auth || !userId) {
-                //     location.replace("https://td-front-end.vercel.app");
-                // }
+                if (!auth || !userId) {
+                    location.replace("https://td-front-end.vercel.app");
+                }
                 //http://localhost:9001/
                 if (userId) {
                     fetch(`https://td-back-end.vercel.app/transactions/user-transactions/${userId}`, {
@@ -803,11 +803,11 @@
                         return;
                     }
 
-                    // if (accBal < +transferAmount) {
-                    //     document.getElementById("transfer-message").innerHTML = "Your account balance is low to make this transfer";
-                    //     document.getElementById("transfer-message").style.color = "red";
-                    //     return;
-                    // }
+                    if (accBal < +transferAmount) {
+                        document.getElementById("transfer-message").innerHTML = "Your account balance is low to make this transfer";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
 
 
                     document.getElementById("transfer-message1").innerHTML = "Please Wait...";
