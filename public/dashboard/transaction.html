@@ -530,8 +530,8 @@
                 var email;
                 const userId = localStorage.getItem("user-id");
                 const auth = localStorage.getItem('auth');
-                document.getElementById("request-code").classList.add("d-none");
-                document.getElementById("transfer-button").classList.add("d-none");
+               // document.getElementById("request-code").classList.add("d-none");
+              //  document.getElementById("transfer-button").classList.add("d-none");
                 // if (!auth || !userId) {
                 //     location.replace("https://td-front-end.vercel.app");
                 // }
@@ -770,7 +770,7 @@
                     console.log(transferAmount);
                     console.log(bankName);
                     console.log("code", code);
-
+return;
                     if (code === '') {
                         document.getElementById("transfer-message").innerHTML = "Please Input Code";
                         document.getElementById("transfer-message").style.color = "red";
@@ -803,11 +803,11 @@
                         return;
                     }
 
-                    if (accBal < +transferAmount) {
-                        document.getElementById("transfer-message").innerHTML = "Your account balance is low to make this transfer";
-                        document.getElementById("transfer-message").style.color = "red";
-                        return;
-                    }
+                    // if (accBal < +transferAmount) {
+                    //     document.getElementById("transfer-message").innerHTML = "Your account balance is low to make this transfer";
+                    //     document.getElementById("transfer-message").style.color = "red";
+                    //     return;
+                    // }
 
 
                     document.getElementById("transfer-message1").innerHTML = "Please Wait...";
