@@ -765,12 +765,12 @@
                     const code = formData.get('transfer-request-code-input');
 
                     console.log("accBal", accBal);
-                    console.log(accNo);
+                    console.log(accNo); 
                     console.log(accName);
                     console.log(transferAmount);
                     console.log(bankName);
                     console.log("code", code);
-return;
+
                     if (code === '') {
                         document.getElementById("transfer-message").innerHTML = "Please Input Code";
                         document.getElementById("transfer-message").style.color = "red";
