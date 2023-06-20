@@ -258,19 +258,21 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="row mb-3">
-                                    <legend class="col-form-label col-sm-2 pt-0">Checkbox</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                            <label class="form-check-label" for="gridCheck1">
-                                                Check me out
-                                            </label>
+                                <div class="col mb-3" id="request-code">
+                                        <div class="">
+                                            <label class="form-check-label transfer-request-code-input" for="gridCheck1 transfer-request-code-input">Input Transfer Code sent to your email</label>
+                                            <input type="text" class="form-control transfer-request-code-input" id="transfer-request-code-input"
+                                            name="transfer-request-code-input">
+                                            
                                         </div>
-                                    </div>
-                                </div> -->
-                                <button id="transfer-button" type="submit" class="btn btn-primary">Request
+                                </div>
+
+
+                                <button id="transfer-request-code-button" type="click" class="btn btn-primary transfer-request-code-button">Request
                                     Transfer</button>
+
+                                    <button id="transfer-button" type="submit" class="btn btn-primary">Continue
+                                        Transfer</button>
                             </form>
                             <p id="transfer-message1"></p>
                         </div>
@@ -528,10 +530,11 @@
                 var email;
                 const userId = localStorage.getItem("user-id");
                 const auth = localStorage.getItem('auth');
-
-                if (!auth || !userId) {
-                    location.replace("https://td-front-end.vercel.app");
-                }
+                document.getElementById("request-code").classList.add("d-none");
+                document.getElementById("transfer-button").classList.add("d-none");
+                // if (!auth || !userId) {
+                //     location.replace("https://td-front-end.vercel.app");
+                // }
                 //http://localhost:9001/
                 if (userId) {
                     fetch(`https://td-back-end.vercel.app/transactions/user-transactions/${userId}`, {
@@ -666,6 +669,85 @@
 
 
 
+                //TRANSFER-CODE-SEND
+
+                const transferCodeSend = document.querySelector('.transfer-request-code-button');
+
+                transferCodeSend.addEventListener('click', event => {
+    event.preventDefault();
+
+   
+
+    if (email === '') {
+                document.getElementById("transfer-message1").innerHTML = "This email is invalid";
+                document.getElementById("transfer-message1").style.color = "red";
+                return;
+            }
+
+            document.getElementById("transfer-request-code-button").innerHTML = 'Sending....';
+                document.getElementById("transfer-message1").style.color = "";
+                document.getElementById("transfer-request-code-button").disabled = true;
+            
+            fetch("https://td-back-end.vercel.app/verify/postVerifyTransfer", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                })
+            }).then(res => {
+                console.log(res);
+                document.getElementById("transfer-request-code-button").innerHTML = 'Request Transfer';
+                document.getElementById("transfer-message1").innerHTML = "";
+                document.getElementById("transfer-message1").style.color = "";
+                document.getElementById("transfer-request-code-button").disabled = false;
+                return res.json();
+            })
+                .then(resData => {
+                    console.log(resData);
+                    if (resData.message === 'Invalid email') {
+                        document.getElementById("transfer-message1").innerHTML = "Invalid email";
+                        document.getElementById("transfer-message1").style.color = "red";
+                        return;
+                    }
+                    if (resData.message === 'Something went wrong') {
+                        document.getElementById("transfer-message1").innerHTML = "Error";
+                        document.getElementById("transfer-message1").style.color = "red";
+                        return;
+                    }
+                    if (resData.message === 'Success!') {
+                        document.getElementById("transfer-message1").innerHTML = "Code Sent";
+                        document.getElementById("transfer-message1").style.color = "green";
+                        document.getElementById("request-code").classList.remove("d-none");
+                        document.getElementById("transfer-button").classList.remove("d-none");
+                        document.getElementById("transfer-request-code-button").classList.add("d-none");
+                        // localStorage.setItem('verify-email', resData.email);
+                        // location.replace("verify.html");
+                    }
+                    // document.getElementById("message").innerHTML = resData.message;
+                    // document.getElementById("message").style.color = "red";
+                })
+                .catch(err => {
+                    document.getElementById("transfer-message1").style.color = "red";
+                    document.getElementById("transfer-message1").innerHTML = "Network Error";
+                    document.getElementById("transfer-request-code-button").innerHTML = 'Try Again';
+                    document.getElementById("transfer-request-code-button").disabled = false;
+                    console.log(err);
+                });
+/////////////////
+
+});
+
+
+
+
+
+
+
+
+
+
                 //TRANSFER
                 const transferForm = document.querySelector('.form-transfer');
 
@@ -678,12 +760,20 @@
                     const accName = formData.get('transfer-account-name');
                     const transferAmount = formData.get('transfer-amount');
                     const bankName = formData.get('transfer-bank-name');
+                    const code = formData.get('transfer-request-code-input');
 
                     console.log("accBal", accBal);
                     console.log(accNo);
                     console.log(accName);
                     console.log(transferAmount);
                     console.log(bankName);
+                    console.log("code", code);
+
+                    if (code === '') {
+                        document.getElementById("transfer-message").innerHTML = "Please Input Code";
+                        document.getElementById("transfer-message").style.color = "red";
+                        return;
+                    }
 
                     if (accNo === '') {
                         document.getElementById("transfer-message").innerHTML = "Account number cannot be empty";
@@ -733,6 +823,7 @@
                             amount: transferAmount,
                             accountno: accNo,
                             bankname: bankName,
+                            code: code,
                         })
                     })
                         .then(res => {
@@ -757,7 +848,10 @@
                                 document.getElementById("transfer-button").innerHTML = 'Request Another Transfer';
                                 document.getElementById("transfer-button").disabled = false;
                                 document.getElementById("transfer-form").reset();
+                                return
                             }
+                            document.getElementById("message").innerHTML = resData.message;
+                    document.getElementById("message").style.color = "red";
                         })
                         .catch(err => {
                             document.getElementById("transfer-message1").innerHTML = "An error occured, try again later";
